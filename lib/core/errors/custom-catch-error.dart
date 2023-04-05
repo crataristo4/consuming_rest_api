@@ -4,7 +4,6 @@ import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
 import 'error.dart';
-import 'success-error-message.dart';
 
 abstract class CustomCatchWrapper {
   Future<String> handleError({required Object e, StackTrace? stackTrace});
@@ -22,7 +21,7 @@ class CustomCatchErrorImpl extends CustomCatchWrapper {
           if (e.response?.data is Map && e.response!.data.containsKey('message')) {
             errorMessage = e.response!.data['message'];
           } else {
-            errorMessage = errorOrSuccessMessageFromJson(e.response!.data.toString()).message;
+            errorMessage = e.response!.data['message'];
           }
         } else {
           errorMessage = ServerException.getErrorMessage(e);
@@ -31,6 +30,8 @@ class CustomCatchErrorImpl extends CustomCatchWrapper {
         errorMessage = ServerException.getErrorMessage(e);
       }
     } else if (e is NoInternetException) {
+      errorMessage = e.toString();
+    } else {
       errorMessage = e.toString();
     }
     return errorMessage!;
