@@ -1,4 +1,6 @@
 import 'package:consuming_rest_api/core/injections/injections.dart';
+import 'package:consuming_rest_api/core/route/route_generator.dart';
+import 'package:consuming_rest_api/core/view/airlines_page.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
@@ -17,6 +19,8 @@ class EntryPoint extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
+      initialRoute: AirlinePage.routeName,
+      onGenerateRoute: RouteGenerator.generateRoute,
     );
   }
 }
