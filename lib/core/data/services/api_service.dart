@@ -2,7 +2,6 @@ import 'package:consuming_rest_api/core/models/aviation_response.dart';
 import 'package:consuming_rest_api/utils/enums.dart';
 import 'package:consuming_rest_api/utils/network/dio_client.dart';
 import 'package:dio/dio.dart';
-import 'package:logger/logger.dart';
 
 var cancelRequestToken = CancelToken();
 
