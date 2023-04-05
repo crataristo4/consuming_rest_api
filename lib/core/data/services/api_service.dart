@@ -5,7 +5,6 @@ import 'package:dio/dio.dart';
 import 'package:logger/logger.dart';
 
 var cancelRequestToken = CancelToken();
-var logger = Logger(printer: PrettyPrinter(lineLength: 500));
 
 class ApiService<T> {
   static ApiService? _instance;
