@@ -7,7 +7,7 @@ class DioClient {
 
   static BaseOptions initDio() {
     return BaseOptions(
-        baseUrl: 'https://api.aviationstack.com/v1',
+        baseUrl: 'http://api.aviationstack.com/v1',
         connectTimeout: const Duration(seconds: 30),
         receiveTimeout: const Duration(seconds: 45),
         sendTimeout: const Duration(seconds: 30),
